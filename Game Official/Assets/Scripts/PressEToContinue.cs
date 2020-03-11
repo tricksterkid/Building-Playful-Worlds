@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PressEnterToContinue : MonoBehaviour
+public class PressEToContinue : MonoBehaviour
 {
 
     void Update()
     {
 
-        if(Input.GetKeyDown (KeyCode.Return))
+        if(Input.GetKeyDown (KeyCode.E))
         {
             SceneManager.LoadScene("Level01");
         }

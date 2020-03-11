@@ -2,25 +2,54 @@
 
 public class OpenCollectible : MonoBehaviour
 {
-
+    bool WithinTriggerRange = false;
+    bool IsPanelActive = false;
     public GameObject Panel;
     public GameObject Trigger;
+    public GameObject TutorialMessage;
 
-    private void OnTriggerEnter(Collider other)
+    // what happens when the player collides with the trigger
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Panel.SetActive(true);
-            Time.timeScale = 0.0f;
+            TutorialMessage.SetActive(true);
+            WithinTriggerRange = true;
         }
     }
 
-    private void Update()
+    // what happens when the player leaves the trigger
+    void OnTriggerExit(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        TutorialMessage.SetActive(false);
+        WithinTriggerRange = false;
+    }
+
+    void Update()
+    {
+        // if the player is in the trigger they can activate the collectible
+        if (WithinTriggerRange == true)
         {
-            Panel.SetActive(false);
-            Time.timeScale = 1.0f;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Panel.SetActive(true);
+                TutorialMessage.SetActive(false);
+                IsPanelActive = true;
+                Time.timeScale = 0.0f;
+            }
+        }
+
+        // if the collectible is active, the player can deactivate it and the trigger is removed
+        if (IsPanelActive == true)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Panel.SetActive(false);
+                TutorialMessage.SetActive(false);
+                IsPanelActive = false;
+                gameObject.SetActive(false);
+                Time.timeScale = 1.0f;
+            }
         }
     }
     
