@@ -2,7 +2,6 @@
 
 public class GetKey : MonoBehaviour
 {
-
     public GameObject message;
     public bool hasKey = false;
 
@@ -18,5 +17,4 @@ public class GetKey : MonoBehaviour
             hasKey = true;
         }
     }
-
 }

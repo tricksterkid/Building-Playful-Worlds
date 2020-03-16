@@ -2,7 +2,6 @@
 
 public class ExitGamePressE : MonoBehaviour
 {
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -11,5 +10,4 @@ public class ExitGamePressE : MonoBehaviour
             Application.Quit();
         }
     }
-
 }

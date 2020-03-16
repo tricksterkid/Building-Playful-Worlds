@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StartCutscene : MonoBehaviour
@@ -41,7 +40,6 @@ public class StartCutscene : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             Player.SetActive(true);
@@ -49,6 +47,5 @@ public class StartCutscene : MonoBehaviour
             CutsceneCam.SetActive(false);
             SkipScene.SetActive(false);
         }
-
     }
 }

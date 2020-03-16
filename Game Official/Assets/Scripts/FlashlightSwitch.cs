@@ -2,7 +2,6 @@
 
 public class FlashlightSwitch : MonoBehaviour
 {
-
     public Light Flashlight;
 
     void Start()
@@ -21,5 +20,4 @@ public class FlashlightSwitch : MonoBehaviour
             Flashlight.enabled = false;
         }
     }
-
 }
