@@ -7,6 +7,8 @@ public class OpenCollectible : MonoBehaviour
     public GameObject Panel;
     public GameObject Trigger;
     public GameObject TutorialMessage;
+    public GameObject DoorToBeOpened;
+    public GameObject OpenedDoor;
 
     // what happens when the player collides with the trigger
     void OnTriggerEnter(Collider other)
@@ -44,6 +46,8 @@ public class OpenCollectible : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
+                OpenedDoor.SetActive(true);
+                DoorToBeOpened.SetActive(false);
                 Panel.SetActive(false);
                 TutorialMessage.SetActive(false);
                 IsPanelActive = false;

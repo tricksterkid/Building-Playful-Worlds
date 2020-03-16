@@ -16,8 +16,6 @@ public class GetKey : MonoBehaviour
             Destroy(message, 1.5f);
 
             hasKey = true;
-
-            Debug.Log(hasKey);
         }
     }
 

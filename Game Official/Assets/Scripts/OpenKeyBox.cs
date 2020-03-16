@@ -15,7 +15,6 @@ public class OpenKeyBox : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             openBox.Play("Chest Opens");
-
         }
     }
 
