@@ -4,11 +4,11 @@ public class OpenCollectible : MonoBehaviour
 {
     bool WithinTriggerRange = false;
     bool IsPanelActive = false;
-    public GameObject Panel;
-    public GameObject Trigger;
+    public GameObject CollectiblePanel;
     public GameObject TutorialMessage;
     public GameObject DoorToBeOpened;
     public GameObject OpenedDoor;
+    public GameObject Collectible;
 
     // what happens when the player collides with the trigger
     void OnTriggerEnter(Collider other)
@@ -34,7 +34,7 @@ public class OpenCollectible : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Panel.SetActive(true);
+                CollectiblePanel.SetActive(true);
                 TutorialMessage.SetActive(false);
                 IsPanelActive = true;
                 Time.timeScale = 0.0f;
@@ -48,8 +48,9 @@ public class OpenCollectible : MonoBehaviour
             {
                 OpenedDoor.SetActive(true);
                 DoorToBeOpened.SetActive(false);
-                Panel.SetActive(false);
+                CollectiblePanel.SetActive(false);
                 TutorialMessage.SetActive(false);
+                Collectible.SetActive(false);
                 IsPanelActive = false;
                 gameObject.SetActive(false);
                 Time.timeScale = 1.0f;
