@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class OpenKeyBox : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class OpenKeyBox : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             openBox.Play("Chest Opens");
+            StartCoroutine(StopAnimation());
         }
+    }
+
+    IEnumerator StopAnimation()
+    {
+        yield return new WaitForSeconds(1);
+        openBox.enabled = !openBox.enabled;
     }
 }

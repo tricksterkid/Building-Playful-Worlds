@@ -54,6 +54,7 @@ public class StartCutscene : MonoBehaviour
             closeBox.Play("Chest Closes");
             CutsceneCam.SetActive(false);
             SkipScene.SetActive(false);
+            IsCutscenePlaying = false;
         }
     }
 }
