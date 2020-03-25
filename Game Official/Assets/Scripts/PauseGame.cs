@@ -8,7 +8,7 @@ public class PauseGame : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
-            {
+        {
             PauseScreen.SetActive(true);
             IsGamePaused = true;
             Time.timeScale = 0.0f;
