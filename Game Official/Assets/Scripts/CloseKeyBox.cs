@@ -15,7 +15,6 @@ public class CloseKeyBox : MonoBehaviour
         if (other.gameObject.CompareTag("CutsceneCam"))
         {
             closeBox.Play("Chest Closes");
-
         }
     }
 }
