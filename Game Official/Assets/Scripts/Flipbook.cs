@@ -15,6 +15,11 @@ public class Flipbook : MonoBehaviour
     public GameObject Page9;
     public GameObject Page10;
 
+    void Start()
+    {
+        Cursor.visible = false;
+    }
+
     void FixedUpdate()
     {
         Page1.SetActive(true);
