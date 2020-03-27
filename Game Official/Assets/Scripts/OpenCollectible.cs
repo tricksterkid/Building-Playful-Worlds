@@ -4,6 +4,7 @@ public class OpenCollectible : MonoBehaviour
 {
     bool WithinTriggerRange = false;
     bool IsPanelActive = false;
+
     public GameObject CollectiblePanel;
     public GameObject TutorialMessage;
     public GameObject DoorToBeOpened;
